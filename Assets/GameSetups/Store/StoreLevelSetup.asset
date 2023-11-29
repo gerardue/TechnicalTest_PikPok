@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3daceff6fe748588be17e89370d4c9b, type: 3}
+  m_Name: StoreLevelSetup
+  m_EditorClassIdentifier: 
+  storeLevels:
+  - name: Lvl 1
+    level: 1
+    items:
+    - {fileID: 11400000, guid: 06c04c713fed9794cb6e40cd8dbe8737, type: 2}
+  - name: Lvl 3
+    level: 3
+    items:
+    - {fileID: 11400000, guid: 06c04c713fed9794cb6e40cd8dbe8737, type: 2}
+    - {fileID: 11400000, guid: eadf14a8756138345a43e6f8ee80027b, type: 2}
+  - name: 
+    level: 5
+    items: []
+  - name: 
+    level: 7
+    items: []
+  - name: 
+    level: 9
+    items: []
