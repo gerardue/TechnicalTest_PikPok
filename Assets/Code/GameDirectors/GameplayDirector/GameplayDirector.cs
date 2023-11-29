@@ -26,13 +26,8 @@ namespace Game.GameDirectors.GameplayDirector
         private void Awake()
         {
             inventoryDirector.Initialize(storeDirector.GetItem, gameStateDirector.UpdateCoin, () => {});
-            storeDirector.Initialize(gameStateDirector.GetCurrentLevel, gameStateDirector.UpdateCoin);
+            storeDirector.Initialize(gameStateDirector.GetCurrentLevel, gameStateDirector.Debit, inventoryDirector.AddItemToinventory);
             uiDirector.Initialize(storeDirector.OpenStore, inventoryDirector.OpenInventory);
-        }
-
-        public void Test(int i)
-        {
-            
         }
         
         private void OnEnable()

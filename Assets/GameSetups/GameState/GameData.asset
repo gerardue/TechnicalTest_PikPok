@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8852dcc8bb44129039636f13e8f74b, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  coins: 100
+  coins: 10
   level: 1

@@ -11,6 +11,9 @@ namespace Game.Systems.InventorySystem.View
     public class InventoryItemView : MonoBehaviour
     {
         [SerializeField]
+        private TextMeshProUGUI nameItemText;
+        
+        [SerializeField]
         private Image icon;
 
         [SerializeField]
@@ -24,7 +27,6 @@ namespace Game.Systems.InventorySystem.View
 
         private int itemId;
         private string descriptionItem;
-        private string nameItem;
         private int price;
         private ItemSetup itemMerged;
 
@@ -39,7 +41,7 @@ namespace Game.Systems.InventorySystem.View
             Action aOnEquip, Action<string, string> aOnDescription, Action<int> aOnRemoveItem)
         {
             itemId = aItemId;
-            nameItem = aNameItem;
+            nameItemText.text = aNameItem;
             descriptionItem = aDescriptionItem;
             price = aPrice;
             itemMerged = aItemMerge;
@@ -62,14 +64,14 @@ namespace Game.Systems.InventorySystem.View
             });
             
             descriptionButton.onClick.RemoveAllListeners();
-            descriptionButton.onClick.AddListener(() => aOnDescription?.Invoke(nameItem, descriptionItem));
+            descriptionButton.onClick.AddListener(() => aOnDescription?.Invoke(nameItemText.text, descriptionItem));
         }
 
         public void MergeItem()
         {
             onRemoveItem?.Invoke(itemId);
             itemId = itemMerged.Id;
-            nameItem = itemMerged.NameItem;
+            nameItemText.text = itemMerged.NameItem;
             descriptionItem = itemMerged.Description;
             price = itemMerged.Price;
             itemMerged = itemMerged.ItemMerged;

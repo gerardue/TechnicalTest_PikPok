@@ -47,13 +47,11 @@ namespace Game.Systems.InventorySystem.View
         
         public void Dispose()
         {
-            Debug.Log(items.Count);
             foreach (InventoryItemView item in items)
             {
                 ObjectPool.Instance.Recycle(item.gameObject);
             }
             items.Clear();
-            // inventoryUI.SetActive(false);
         }
         
         public void CreateItem(int aItemId, string aNameItem, string aDescriptionItem, int price, ItemSetup itemMerged, Action<int> aOnSell, 

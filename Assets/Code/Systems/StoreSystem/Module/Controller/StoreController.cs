@@ -10,21 +10,29 @@ namespace Code.Systems.StoreSystem.Controller
         [SerializeField]
         private StoreItemLibrary storeItemLibrary;
 
-        private Action<int> onPurchase;
-        private Action<int> onSell; 
+        private Func<int, bool> onPurchase;
+        private Action<int> onAddItem;
+        private Action onNotDebit;
         
         #region Public Methods
         
-        public void Initialize(Action<int> aOnPurchase)
+        public void Initialize(Func<int, bool> aOnPurchase, Action<int> aOnAddItem, Action aOnNotDebit)
         {
             storeItemLibrary.InitializeItems();
             onPurchase = aOnPurchase;
+            onAddItem = aOnAddItem; 
+            onNotDebit = aOnNotDebit;
         }
         
         public void BuyItem(int itemId)
         {
             int price = storeItemLibrary.StoreItems[itemId].Price;
-            onPurchase?.Invoke(-price);
+            bool isDebited = onPurchase.Invoke(price);
+
+            if (isDebited)
+                onAddItem?.Invoke(itemId);
+            else
+                onNotDebit?.Invoke();
         }
         
         public ItemSetup GetItem(int aItemId)

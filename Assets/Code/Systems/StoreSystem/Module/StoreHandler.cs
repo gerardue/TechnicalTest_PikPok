@@ -26,10 +26,10 @@ namespace Game.Systems.StoreSystem.Handler
         
         #region Public Methods
         
-        public void Initialize(Func<int> aOnGetLevelStore, Action<int> aOnBuyItem)
+        public void Initialize(Func<int> aOnGetLevelStore, Func<int, bool> aOnBuyItem, Action<int> aOnAdditem)
         {
             onGetLevelStore = aOnGetLevelStore;
-            storeController.Initialize(aOnBuyItem);
+            storeController.Initialize(aOnBuyItem, aOnAdditem, store.OpenPopUp);
         }
 
         public void OpenStore()

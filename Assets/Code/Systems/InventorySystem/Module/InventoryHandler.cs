@@ -41,6 +41,11 @@ namespace Game.Systems.InventorySystem.Handler
             inventoryView.Dispose();
         }
         
+        public void AddItemToInventory(int aId)
+        {
+            inventorySetup.AddItem(aId);
+        }
+        
         #endregion
 
         #region Private Methods

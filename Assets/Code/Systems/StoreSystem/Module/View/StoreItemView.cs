@@ -8,6 +8,9 @@ namespace Game.Systems.StoreSystem.View
     public class StoreItemView : MonoBehaviour
     {
         [SerializeField]
+        private TextMeshProUGUI nameText;
+        
+        [SerializeField]
         private Image icon;
 
         [SerializeField]
@@ -28,7 +31,7 @@ namespace Game.Systems.StoreSystem.View
         public void Initialize(int aItemId, string aNameItem, string aDescriptionItem, int price, Action<int> aOnBuy, Action<string, string> aOnDescription)
         {
             itemId = aItemId;
-            nameItem = aNameItem;
+            nameText.text = aNameItem;
             descriptionItem = aDescriptionItem;
 
             priceText.text = price.ToString();
@@ -37,7 +40,7 @@ namespace Game.Systems.StoreSystem.View
             buyButton.onClick.AddListener(() => aOnBuy?.Invoke(itemId));
             
             descriptionButton.onClick.RemoveAllListeners();
-            descriptionButton.onClick.AddListener(() => aOnDescription?.Invoke(nameItem, descriptionItem));
+            descriptionButton.onClick.AddListener(() => aOnDescription?.Invoke(nameText.text, descriptionItem));
         }
 
         #endregion

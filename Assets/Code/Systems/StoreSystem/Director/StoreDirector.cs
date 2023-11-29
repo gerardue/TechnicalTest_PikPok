@@ -17,9 +17,9 @@ namespace Game.Store.Director
 
         #region Public Methods
 
-        public void Initialize(Func<int> aOnGetLevelStore, Action<int> aOnBuyItem)
+        public void Initialize(Func<int> aOnGetLevelStore, Func<int, bool> aOnBuyItem, Action<int> aOnAddItem)
         {
-            storeHandler.Initialize(aOnGetLevelStore, aOnBuyItem);
+            storeHandler.Initialize(aOnGetLevelStore, aOnBuyItem, aOnAddItem);
         }
         
         public void OpenStore()

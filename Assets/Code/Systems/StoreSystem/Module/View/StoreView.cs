@@ -27,6 +27,10 @@ namespace Game.Systems.StoreSystem.View
         [Header("Other components")]
         [SerializeField]
         private Transform parentItems;
+        
+        [Header("PopUp")]
+        [SerializeField]
+        private GameObject popUp;
 
         private List<StoreItemView> items = new List<StoreItemView>();
 
@@ -67,6 +71,11 @@ namespace Game.Systems.StoreSystem.View
         public void UpdateCoins(int currentAmountCoins)
         {
             coinText.text = currentAmountCoins.ToString(); 
+        }
+        
+        public void OpenPopUp()
+        {
+            popUp.SetActive(true);
         }
         
         #endregion

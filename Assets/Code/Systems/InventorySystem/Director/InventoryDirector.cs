@@ -27,6 +27,11 @@ namespace Game.Systems.InventorySystem.Director
             inventoryHandler.CloseInventory();
         }
         
+        public void AddItemToinventory(int aId)
+        {
+            inventoryHandler.AddItemToInventory(aId);
+        }
+        
         #endregion
     }
 }
