@@ -1,0 +1,16 @@
+{
+    "name": "GameStateDirector",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6ef28a5a9bf632c42b7ead0be5443d6d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

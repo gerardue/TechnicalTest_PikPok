@@ -1,0 +1,18 @@
+{
+    "name": "InventoryDirector",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0b52c546876cf91449400e18d2c2b94f",
+        "GUID:43463f909ec953d47b7f4514bc108813",
+        "GUID:a847ca0bcc81e8748950ccdc3da6fa53"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
