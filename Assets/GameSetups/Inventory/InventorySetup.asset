@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7e43a750d94440a9989e862277878a, type: 3}
   m_Name: InventorySetup
   m_EditorClassIdentifier: 
-  itemsId: 0000000000000000020000000200000002000000
+  itemsId: 0200000002000000020000000200000002000000

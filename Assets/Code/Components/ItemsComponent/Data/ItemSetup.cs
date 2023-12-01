@@ -28,7 +28,7 @@ namespace Game.Components.ItemsComponent.Data
         {
             get => id;
             set => id = value;   
-        }
+        }  
         
         public string NameItem => nameItem;
         public string Description => description;

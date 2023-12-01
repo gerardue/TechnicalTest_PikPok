@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
 using Game.Components.ItemsComponent.Data;
+using Game.Components.StatsComponent.Data;
 using Game.Systems.InventorySystem.Data;
 using Game.Systems.InventorySystem.View;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using Task = System.Threading.Tasks.Task;
 
@@ -19,11 +19,11 @@ namespace Game.Systems.InventorySystem.Handler
 
         private Func<int, ItemSetup> onGetItem;
         private Action<int> onSell;
-        private Action onEquip; 
+        private Action<StatData[], int> onEquip; 
         
         #region Public Methods
 
-        public void Initialize(Func<int, ItemSetup> aOnGetItem, Action<int> aOnSell, Action aOnEquip)
+        public void Initialize(Func<int, ItemSetup> aOnGetItem, Action<int> aOnSell, Action<StatData[], int> aOnEquip)
         {
             onGetItem = aOnGetItem;
             onSell = aOnSell;
@@ -57,7 +57,7 @@ namespace Game.Systems.InventorySystem.Handler
             for (int i = 0; i < inventorySetup.Items.Count; i++)
             {
                 var item = onGetItem(inventorySetup.Items[i]);
-                inventoryView.CreateItem(item.Id, item.NameItem, item.Description, item.Price, item.ItemMerged, onSell, onEquip, RemoveItemFromInventory);
+                inventoryView.CreateItem(item.Id, item.NameItem, item.Description, item.Price, item.StatData, item.ItemMerged, onSell, onEquip, RemoveItemFromInventory);
             }
         }
 

@@ -9,11 +9,14 @@ namespace Code.Systems.UISystem.Director
         [SerializeField]
         private MenusHandlerView menusHandlerView;
 
+        [SerializeField]
+        private HudView hudView;
+
         #region Public Methods
 
-        public void Initialize(Action aOnStore, Action aOnInventory)
+        public void Initialize(int aCoin, int aLevel)
         {
-            menusHandlerView.Initialize(aOnStore, aOnInventory);
+            hudView.UpdateHud(aCoin, aLevel);
         }
 
         #endregion

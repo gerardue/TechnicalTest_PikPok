@@ -1,5 +1,6 @@
 using System;
 using Game.Components.ItemsComponent.Data;
+using Game.Components.StatsComponent.Data;
 using Game.Systems.InventorySystem.Handler;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Game.Systems.InventorySystem.Director
 
         #region Public Methods
 
-        public void Initialize(Func<int, ItemSetup> aOnGetItem, Action<int> aOnSell, Action aOnEquip)
+        public void Initialize(Func<int, ItemSetup> aOnGetItem, Action<int> aOnSell, Action<StatData[], int> aOnEquip)
         {
             inventoryHandler.Initialize(aOnGetItem, aOnSell, aOnEquip);
         }

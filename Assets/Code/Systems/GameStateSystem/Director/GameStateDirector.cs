@@ -29,14 +29,24 @@ namespace Game.Systems.GameStateSystem.Director
             return canDebit; 
         }
         
-        public void IncreaseLevel()
+        public void UpLevel()
         {
-            gameDataSetup.Level++;
+            gameDataSetup.Level = Mathf.Min(gameDataSetup.Level + 1, 3);
+        }
+
+        public void ResetLevel()
+        {
+            gameDataSetup.Level = 1; 
         }
 
         public int GetCurrentLevel()
         {
             return gameDataSetup.Level; 
+        }
+
+        public int GetCurrentCoins()
+        {
+            return gameDataSetup.Coins;
         }
 
         #endregion

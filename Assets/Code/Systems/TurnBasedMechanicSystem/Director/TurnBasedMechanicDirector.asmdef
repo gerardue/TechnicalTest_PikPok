@@ -1,0 +1,17 @@
+{
+    "name": "TurnBasedDirector",
+    "rootNamespace": "",
+    "references": [
+        "GUID:383e33ac52f260144a03515f89533020",
+        "GUID:a847ca0bcc81e8748950ccdc3da6fa53"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

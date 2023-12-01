@@ -17,17 +17,11 @@ MonoBehaviour:
     level: 1
     items:
     - {fileID: 11400000, guid: 06c04c713fed9794cb6e40cd8dbe8737, type: 2}
-  - name: Lvl 3
-    level: 3
+  - name: Lvl 2
+    level: 2
     items:
     - {fileID: 11400000, guid: 06c04c713fed9794cb6e40cd8dbe8737, type: 2}
     - {fileID: 11400000, guid: eadf14a8756138345a43e6f8ee80027b, type: 2}
-  - name: 
-    level: 5
-    items: []
-  - name: 
-    level: 7
-    items: []
-  - name: 
-    level: 9
+  - name: Lvl 3
+    level: 3
     items: []

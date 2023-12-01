@@ -16,7 +16,7 @@ MonoBehaviour:
   nameItem: Helmet
   description: Protect you from enemy attacks
   price: 20
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: b227c6c1c35b36940b602110d9556b13, type: 3}
   level: 1
   statData:
   - stat: {fileID: 11400000, guid: bf08e9b082c1116438dd5f1344404330, type: 2}

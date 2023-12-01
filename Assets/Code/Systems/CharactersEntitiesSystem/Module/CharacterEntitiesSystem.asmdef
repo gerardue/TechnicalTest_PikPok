@@ -1,0 +1,19 @@
+{
+    "name": "CharacterEntitiesSystem",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a847ca0bcc81e8748950ccdc3da6fa53",
+        "GUID:a485199db173b8245abb76af98f6a15e",
+        "GUID:43463f909ec953d47b7f4514bc108813",
+        "GUID:ab1f9f875fcdb0c4a8eabe72d23dbc8f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
