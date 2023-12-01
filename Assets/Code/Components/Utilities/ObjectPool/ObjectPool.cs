@@ -16,7 +16,7 @@ namespace Utilities
         private Transform mainContentPools;
 
         // Data
-        private Dictionary<string, List<Object>> objectsCreated = new Dictionary<string, List<Object>>();
+        private Dictionary<string, List<MonoBehaviour>> objectsCreated = new Dictionary<string, List<MonoBehaviour>>();
         private Dictionary<string, Transform> poolsParents = new Dictionary<string, Transform>();
 
         // Temp string to save pool names
@@ -37,7 +37,7 @@ namespace Utilities
         /// <summary>
         /// Create am object with specific position and rotation
         /// </summary>
-        public T CreateObject<T>(T typeObject, Vector3 position, Quaternion rotation) where T : Object
+        public T CreateObject<T>(T typeObject, Vector3 position, Quaternion rotation) where T : MonoBehaviour
         {
             if (objectsCreated.TryGetValue(typeObject.name, out var elements))
             {
@@ -64,7 +64,7 @@ namespace Utilities
         /// <summary>
         /// Create an object with specific parent
         /// </summary>
-        public T CreateObject<T>(T typeObject, Transform transform) where T : Object
+        public T CreateObject<T>(T typeObject, Transform transform) where T : MonoBehaviour
         {
             if (objectsCreated.TryGetValue(typeObject.name, out var elements))
             {
@@ -104,10 +104,10 @@ namespace Utilities
         /// <summary>
         /// Destroy an object
         /// </summary>
-        public void DestroyObject(GameObject typeObject)
+        public void DestroyObject(MonoBehaviour typeObject)
         {
             tempPoolName = typeObject.name.Replace("(Clone)", "");
-            if (objectsCreated.TryGetValue(tempPoolName, out List<Object> elements))
+            if (objectsCreated.TryGetValue(tempPoolName, out List<MonoBehaviour> elements))
             {
                 elements.Remove(typeObject);
                 Object.Destroy(typeObject);
@@ -120,7 +120,7 @@ namespace Utilities
 
         private void CreatePool(Object typeObject)
         {
-            objectsCreated.Add(typeObject.name, new List<Object>());
+            objectsCreated.Add(typeObject.name, new List<MonoBehaviour>());
             tempPoolName = typeObject.name + POOL_NAME_SUFFIX;
 
             if (!poolsParents.TryGetValue(tempPoolName, out var pool))
@@ -134,7 +134,7 @@ namespace Utilities
         /// <summary>
         /// Instantiate an object with specific positiona and rotation
         /// </summary>
-        private T InstantiateObject<T>(T typeObject, List<Object> objectPool, Vector3 pos, Quaternion rotation) where T : Object
+        private T InstantiateObject<T>(T typeObject, List<MonoBehaviour> objectPool, Vector3 pos, Quaternion rotation) where T : MonoBehaviour
         {
             var objectCreated = Object.Instantiate(typeObject, pos, rotation);
 
@@ -145,7 +145,7 @@ namespace Utilities
         /// <summary>
         /// Instantiate an object with specific parent
         /// </summary>
-        private T InstantiateObject<T>(T typeObject, List<Object> objectPool, Transform parent) where T : Object
+        private T InstantiateObject<T>(T typeObject, List<MonoBehaviour> objectPool, Transform parent) where T : MonoBehaviour
         {
             var objectCreated = Object.Instantiate(typeObject, parent);
 
@@ -156,13 +156,12 @@ namespace Utilities
         /// <summary>
         /// Check if an object from pool is avaliable
         /// </summary>
-        private bool IsAvaliable(Object obj)
+        private bool IsAvaliable(MonoBehaviour obj)
         {
             if (obj == null)
                 return false;
 
-            var go = obj as MonoBehaviour;
-            return !go.gameObject.activeSelf;
+            return !obj.gameObject.activeSelf;
         }
 
         /// <summary>

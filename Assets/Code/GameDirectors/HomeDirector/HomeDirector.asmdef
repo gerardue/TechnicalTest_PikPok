@@ -1,0 +1,16 @@
+{
+    "name": "HomeDirector",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6eeeefd2ab40b8645965dc71b6e631c2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,5 +1,6 @@
 using System;
 using Game.Components.ItemsComponent.Data;
+using Game.Components.StatsComponent.Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -28,6 +29,7 @@ namespace Game.Systems.InventorySystem.View
         private int itemId;
         private string descriptionItem;
         private int price;
+        private StatData[] statsData;
         private ItemSetup itemMerged;
 
         private Action<int> onRemoveItem;
@@ -37,13 +39,14 @@ namespace Game.Systems.InventorySystem.View
         
         #region Public Methods
 
-        public void Initialize(int aItemId, string aNameItem, string aDescriptionItem, int aPrice, ItemSetup aItemMerge, Action<int> aOnSell, 
-            Action aOnEquip, Action<string, string> aOnDescription, Action<int> aOnRemoveItem)
+        public void Initialize(int aItemId, string aNameItem, string aDescriptionItem, int aPrice, StatData[] aStatsData, ItemSetup aItemMerge, Action<int> aOnSell, 
+            Action<StatData[], int> aOnEquip, Action<string, string> aOnDescription, Action<int> aOnRemoveItem)
         {
             itemId = aItemId;
             nameItemText.text = aNameItem;
             descriptionItem = aDescriptionItem;
             price = aPrice;
+            statsData = aStatsData;
             itemMerged = aItemMerge;
             onRemoveItem = aOnRemoveItem;
             
@@ -58,7 +61,7 @@ namespace Game.Systems.InventorySystem.View
             equipButton.onClick.RemoveAllListeners();
             equipButton.onClick.AddListener(() =>
             {
-                aOnEquip?.Invoke();
+                aOnEquip?.Invoke(statsData, itemId);
                 aOnRemoveItem?.Invoke(itemId);
                 RecycleItem();
             });
